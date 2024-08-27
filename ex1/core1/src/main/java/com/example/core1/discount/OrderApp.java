@@ -1,14 +1,13 @@
 package com.example.core1.discount;
 
-import com.example.core1.member.Grade;
-import com.example.core1.member.Member;
-import com.example.core1.member.MemberService;
-import com.example.core1.member.MemberServiceImpl;
+import com.example.core1.AppConfig;
+import com.example.core1.member.*;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
