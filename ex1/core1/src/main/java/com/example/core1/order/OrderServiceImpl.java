@@ -1,8 +1,8 @@
-package com.example.core1.discount;
+package com.example.core1.order;
 
+import com.example.core1.discount.DiscountPolicy;
 import com.example.core1.member.Member;
 import com.example.core1.member.MemberRepository;
-import com.example.core1.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
@@ -19,5 +19,10 @@ public class OrderServiceImpl implements OrderService{
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    // 테스트 용도
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
     }
 }

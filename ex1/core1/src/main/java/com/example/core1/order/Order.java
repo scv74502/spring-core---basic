@@ -1,4 +1,4 @@
-package com.example.core1.discount;
+package com.example.core1.order;
 
 public class Order {
     private Long memberId;
