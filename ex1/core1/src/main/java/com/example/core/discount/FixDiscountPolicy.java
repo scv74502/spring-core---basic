@@ -2,8 +2,10 @@ package com.example.core.discount;
 
 import com.example.core.member.Grade;
 import com.example.core.member.Member;
+import org.springframework.stereotype.Component;
 
-public class FixDicountPolicy implements DiscountPolicy{
+@Component
+public class FixDiscountPolicy implements DiscountPolicy{
     private int discountFixAmount = 1000;
 
     @Override

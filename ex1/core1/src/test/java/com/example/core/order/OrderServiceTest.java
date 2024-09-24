@@ -28,4 +28,15 @@ public class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+
+//    @Test
+//    void fieldInjectionTest(){
+//        OrderServiceImpl orderService = new OrderServiceImpl(new MemoryMemberRepository(), new FixDicountPolicy());
+//        memberService.join(new Member(1L, "memberA", Grade.VIP));
+//
+//        orderService.setMemberRepository(new MemoryMemberRepository());
+//        orderService.setDiscountPolicy(new FixDicountPolicy());
+//
+//        orderService.createOrder(1L, "itemA", 10000);
+//    }
 }

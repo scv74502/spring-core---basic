@@ -1,13 +1,15 @@
 package com.example.core.member;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class MemoryMemberRepository implements MemberRepository{
-    // 동시성 이슈를 해결한 해시맵
-    private static Map<Long, Member> store = new ConcurrentHashMap<>();
+@Primary
+public class MemoryMemberRepository implements MemberRepository {
+
+    private static Map<Long, Member> store = new HashMap<>();
 
     @Override
     public void save(Member member) {
