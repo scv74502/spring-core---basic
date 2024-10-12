@@ -15,15 +15,13 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public DiscountPolicy setDiscountPolicy(@Qualifier("mainDiscountPolicy") DiscountPolicy
-                                                    discountPolicy) {
-        return discountPolicy;
-    }
+//    @Autowired
+//    public DiscountPolicy setDiscountPolicy(@Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+//        return discountPolicy;
+//    }
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository,
-                            @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
@@ -37,7 +35,7 @@ public class OrderServiceImpl implements OrderService{
     }
 
     // 테스트 용도
-    public MemberRepository getMemberRepository(){
-        return memberRepository;
-    }
+//    public MemberRepository getMemberRepository(){
+//        return memberRepository;
+//    }
 }
